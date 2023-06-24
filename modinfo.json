@@ -3,7 +3,7 @@
 	"name": "Breadway",
 	"version": "0.1",
 	"authors": "Thalber",
-	"description": "Multithreaded room loading",
+	"description": "Multithreaded room baking",
 	"requirements": ["slime-cubed.devconsole"],
 	"requirements_names": [],
 	"checksum_override_version": false
