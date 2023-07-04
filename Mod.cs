@@ -171,8 +171,8 @@ public class Mod : BepInEx.BaseUnityPlugin
 		var tarFile = WorldLoader.FindRoomFile(roomName, false, ".txt");
 		var levelLines = File.ReadAllLines(tarFile);
 		bool NeedBake = RoomPreprocessor.VersionFix(ref levelLines) || (int.Parse(levelLines[9].Split(new char[] { '|' })[0]) < world.preProcessingGeneration);
-		var origDB = setupValues.dontBake;
-		setupValues.dontBake = true;
+		var origBake = setupValues.bake;
+		setupValues.bake = false;
 		orig(world, roomName, room, setupValues);
 		//setupValues.dontBake = true;
 		if (NeedBake)
@@ -215,7 +215,7 @@ public class Mod : BepInEx.BaseUnityPlugin
 			logger.LogMessage($"Current thread: {Thread.CurrentThread.ManagedThreadId}");
 			RoomLocks.Add(rm.name);
 		}
-		sval.dontBake = false;
+		sval.bake = true;
 		string[]? res = RoomPreprocessor.PreprocessRoom(rm, leveltext, world, sval, ppg);
 		File.WriteAllLines(tarFile, res);
 		lock (RoomLocks) RoomLocks.Remove(rm.name);
