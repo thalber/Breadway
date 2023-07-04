@@ -1,7 +1,7 @@
 {
 	"id": "breadway",
 	"name": "Breadway",
-	"version": "0.1",
+	"version": "0.2",
 	"authors": "Thalber",
 	"description": "Multithreaded room baking. See DevConsole commands",
 	"requirements": ["slime-cubed.devconsole"],

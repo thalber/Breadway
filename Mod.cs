@@ -9,7 +9,7 @@ using DevConsole;
 using DevConsole.Commands;
 namespace Breadway;
 
-[BepInEx.BepInPlugin("thalber.breadway", "Breadway", "0.1")]
+[BepInEx.BepInPlugin("thalber.breadway", "Breadway", "0.2")]
 public class Mod : BepInEx.BaseUnityPlugin
 {
 	const string HELP_STRING = """
